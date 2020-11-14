@@ -19,7 +19,9 @@ import java.lang.annotation.Target;
 public @interface TestScopedBeans {
 
   /**
-   * The names of the beans whose scope should be changed to {@value TestScope#NAME}.
+   * Returns names of the beans whose scope should be changed to {@value TestScope#NAME}.
+   *
+   * @return the names of the beans whose scope should be changed to {@value TestScope#NAME}.
    */
   String[] value();
 
