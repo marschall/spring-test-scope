@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.marschall</groupId>
@@ -9,7 +10,7 @@
   <url>https://github.com/marschall/spring-test-scope</url>
   <name>Spring Test Scope</name>
   <description>A Spring Test Scope</description>
-  
+
   <developers>
     <developer>
       <id>marschall</id>
@@ -22,7 +23,7 @@
       </roles>
     </developer>
   </developers>
-  
+
   <licenses>
     <license>
       <name>MIT</name>
@@ -40,7 +41,7 @@
     <url>https://github.com/marschall/spring-test-scope/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
-  
+
   <scm>
     <connection>scm:git:git@github.com:marschall/spring-test-scope.git</connection>
     <developerConnection>scm:git:git@github.com:marschall/spring-test-scope.git</developerConnection>
@@ -73,7 +74,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  
+
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -96,9 +97,8 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.2</version>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jcl</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -115,7 +115,7 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
       <scope>test</scope>
-  </dependency>
+    </dependency>
   </dependencies>
 
   <build>
@@ -132,14 +132,8 @@
           <release>11</release>
           <links>
             <link>https://docs.oracle.com/en/java/javase/11/docs/api/</link>
+            <link>https://docs.spring.io/spring-framework/docs/current/javadoc-api/</link>
           </links>
-          <tags>
-            <tag>
-              <name>implNote</name>
-              <placement>a</placement>
-              <head>Implementation Note:</head>
-            </tag>
-          </tags>
         </configuration>
         <executions>
           <execution>
@@ -173,7 +167,6 @@
         <configuration>
           <mavenExecutorId>forked-path</mavenExecutorId>
           <arguments>-Pdeploy-to-sonatype-oss</arguments>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
         </configuration>
       </plugin>
     </plugins>
@@ -198,11 +191,6 @@
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.jboss.jandex</groupId>
-          <artifactId>jandex-maven-plugin</artifactId>
-          <version>1.0.8</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -239,36 +227,6 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.2</version>
-        </plugin>
-        <plugin>
-          <groupId>codes.rafael.modulemaker</groupId>
-          <artifactId>modulemaker-maven-plugin</artifactId>
-          <version>1.7</version>
-        </plugin>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
-        <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>1.0.0</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.jboss.jandex</groupId>
-                    <artifactId>jandex-maven-plugin</artifactId>
-                    <versionRange>[1.0.1,)</versionRange>
-                    <goals>
-                      <goal>jandex</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore />
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
