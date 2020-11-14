@@ -1,4 +1,4 @@
-package com.github.marschall.spring.test.scope.annotation;
+package com.github.marschall.spring.test.scope;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
@@ -10,10 +10,10 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Scope;
 
-@Scope("test")
+@Scope(TestScope.NAME)
 @Retention(RUNTIME)
 @Target({ TYPE, METHOD })
 @Documented
-public @interface TestScope {
+public @interface TestScoped {
 
 }

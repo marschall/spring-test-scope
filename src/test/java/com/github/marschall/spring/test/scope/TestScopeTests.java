@@ -2,17 +2,14 @@ package com.github.marschall.spring.test.scope;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.springframework.test.context.TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-@SpringJUnitConfig(
-        classes = TestScopeConfiguration.class,
-        initializers = TestScopeInitializer.class)
-@TestExecutionListeners(listeners = TestScopeTestExecutionListener.class, mergeMode = MERGE_WITH_DEFAULTS)
+@SpringJUnitConfig
 class TestScopeTests {
 
   @Autowired
@@ -28,6 +25,17 @@ class TestScopeTests {
   void test2() {
     assertNotNull(this.testScopedBean);
     assertEquals(1, this.testScopedBean.incrementAndGet());
+  }
+
+  @Configuration
+  static class TestScopeConfiguration {
+
+    @Bean
+    @TestScoped
+    public TestScopedBean testScopedBean() {
+      return new TestScopedBean();
+    }
+
   }
 
 }
