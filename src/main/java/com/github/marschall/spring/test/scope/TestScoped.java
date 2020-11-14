@@ -10,6 +10,11 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Scope;
 
+/**
+ * Meta annotation that marks a bean as having a test scope.
+ *
+ * @author Philippe Marschall
+ */
 @Scope(TestScope.NAME)
 @Retention(RUNTIME)
 @Target({ TYPE, METHOD })
