@@ -40,3 +40,15 @@ class MyTests {
   private TestScopedBean testScopedBean;
 
 ```
+
+
+Caveats
+-------
+
+The current implementation has some limitations:
+
+- The presence of a `ContextCustomizerFactory` may prevent sharing of an application context across test classes.
+- The test scope is opened in `#prepareTestInstance` and closed in `#afterTestExecution`. Before and after these methods in the same thread there is not test scope available and accessing test scoped beans will result in an exception. This works fine if a bean is injected into a test but may fail if:
+  - a test scoped bean is referenced by an other bean in the application context
+  - test instances are reused but injection is not repeated
+
