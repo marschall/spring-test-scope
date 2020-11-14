@@ -1,9 +1,9 @@
-# Default TestExecutionListeners for the Spring TestContext Framework
+# Custom TestExecutionListeners for the Spring TestContext Framework
 #
 org.springframework.test.context.TestExecutionListener = \
 	com.github.marschall.spring.test.scope.TestScopeTestExecutionListener
 
-# Default ContextCustomizerFactory implementations for the Spring TestContext Framework
+# Custom ContextCustomizerFactory implementations for the Spring TestContext Framework
 #
 org.springframework.test.context.ContextCustomizerFactory = \
-	com.github.marschall.spring.test.scope.TestContextCustomizerFactory
+	com.github.marschall.spring.test.scope.TestScopeContextCustomizerFactory

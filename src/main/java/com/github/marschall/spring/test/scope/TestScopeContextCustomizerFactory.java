@@ -6,7 +6,15 @@ import org.springframework.test.context.ContextConfigurationAttributes;
 import org.springframework.test.context.ContextCustomizer;
 import org.springframework.test.context.ContextCustomizerFactory;
 
-public final class TestContextCustomizerFactory implements ContextCustomizerFactory {
+/**
+ * Registers the {@link TestScopeContextCustomizer}.
+ *
+ * <p>This listener should be picked up, instantiated and called by the
+ * Spring TestContext Framework.
+ *
+ * @author Philippe Marschall
+ */
+public final class TestScopeContextCustomizerFactory implements ContextCustomizerFactory {
 
   @Override
   public ContextCustomizer createContextCustomizer(Class<?> testClass, List<ContextConfigurationAttributes> configAttributes) {
