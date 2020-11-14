@@ -41,6 +41,12 @@ class MyTests {
 
 ```
 
+Requirements
+------------
+
+- The code has only been tested with Spring 5.3.
+- Java 11 is required.
+- The code has only been tested with JUnit 5, in theory JUnit 4 and TestNG should work as well
 
 Caveats
 -------
