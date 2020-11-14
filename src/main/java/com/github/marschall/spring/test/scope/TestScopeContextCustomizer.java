@@ -8,12 +8,9 @@ import org.springframework.test.context.MergedContextConfiguration;
 /**
  * Registers the test scope.
  *
- * <p>This listener should be picked up, instantiated and called by the
- * Spring TestContext Framework.
- *
  * @author Philippe Marschall
  */
-public final class TestScopeContextCustomizer implements ContextCustomizer {
+final class TestScopeContextCustomizer implements ContextCustomizer {
 
   @Override
   public void customizeContext(ConfigurableApplicationContext context, MergedContextConfiguration mergedConfig) {

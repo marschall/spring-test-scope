@@ -6,4 +6,5 @@ org.springframework.test.context.TestExecutionListener = \
 # Custom ContextCustomizerFactory implementations for the Spring TestContext Framework
 #
 org.springframework.test.context.ContextCustomizerFactory = \
-	com.github.marschall.spring.test.scope.TestScopeContextCustomizerFactory
+	com.github.marschall.spring.test.scope.TestScopeContextCustomizerFactory,\
+	com.github.marschall.spring.test.scope.ChangeToTestScopedContextCustomizerFactory
