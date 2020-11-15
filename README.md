@@ -1,4 +1,4 @@
-Spring Test Scope [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/pring-test-scope/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/pring-test-scope) [![Build Status](https://travis-ci.com/marschall/spring-test-scope.svg?branch=master)](https://travis-ci.com/marschall/spring-test-scope)
+Spring Test Scope [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/pring-test-scope/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/pring-test-scope) [![Build Status](https://travis-ci.com/marschall/spring-test-scope.svg?branch=master)](https://travis-ci.com/marschall/spring-test-scope) [![javadoc](https://javadoc.io/badge2/com.github.marschall/spring-test-scope/javadoc.svg)](https://javadoc.io/doc/com.github.marschall/spring-test-scope)
 =================
 
 A simple test scope for Spring.
