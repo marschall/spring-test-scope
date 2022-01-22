@@ -92,12 +92,12 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
+      <artifactId>spring-jcl</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-jcl</artifactId>
+      <artifactId>spring-test</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -113,6 +113,11 @@
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-jul</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -158,7 +163,12 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
-          <forkCount>0</forkCount>
+          <systemProperties>
+            <property>
+              <name>java.util.logging.manager</name>
+              <value>org.apache.logging.log4j.jul.LogManager</value>
+            </property>
+          </systemProperties>
         </configuration>
       </plugin>
       <plugin>
